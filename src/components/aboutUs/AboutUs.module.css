@@ -1,0 +1,104 @@
+/* src/sections/About/About.module.css */
+
+/* --- Template: #about margin --- */
+:global(#about) {
+  margin-top: 120px;
+}
+
+/* --- Template: .about-us arka plan + padding --- */
+.aboutUs {
+  background-image: url("/images/about-bg.png"); /* public/ altı */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 140px 0 120px;
+}
+
+/* Basit layout yardımcıları (container/row/cols) */
+.container {
+  width: min(1140px, 92%);
+  margin: 0 auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr; /* sol görsel / sağ içerik */
+  align-items: center;
+  gap: 40px;
+}
+
+.colLeft {}
+.colRight {}
+
+/* --- Template: .about-us .left-image --- */
+.leftImage {
+  margin-right: 45px;
+}
+
+.leftImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Template: .about-us .services .item --- */
+.services {}
+
+.grid {
+  /* col-lg-6 görünümünün modüler karşılığı */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.gridCol {}
+
+/* item: float yerine flex */
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;           /* template’deki margin-right:25px yerine */
+  margin-bottom: 30px; /* template ile aynı */
+}
+
+/* --- Template: .about-us .services .item .icon --- */
+.icon {
+  flex: 0 0 auto;
+}
+
+.icon img {
+  max-width: 70px;
+  height: auto;
+  display: block;
+}
+
+/* --- Template: .about-us .services .item h4 / p --- */
+.rightText h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.rightText p {
+  color: #fff;
+  margin: 0;
+}
+
+/* --- Responsive uyarlamalar --- */
+@media (max-width: 992px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .leftImage {
+    margin-right: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
