@@ -27,8 +27,8 @@
   gap: 40px;
 }
 
-.colLeft {}
-.colRight {}
+/* .colLeft {}
+.colRight {} */
 
 /* --- Template: .about-us .left-image --- */
 .leftImage {
@@ -42,7 +42,7 @@
 }
 
 /* --- Template: .about-us .services .item --- */
-.services {}
+/* .services {} */
 
 .grid {
   /* col-lg-6 görünümünün modüler karşılığı */
@@ -52,7 +52,7 @@
   row-gap: 30px;
 }
 
-.gridCol {}
+/* .gridCol {} */
 
 /* item: float yerine flex */
 .item {
