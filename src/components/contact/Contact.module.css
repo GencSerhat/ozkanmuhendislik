@@ -1,0 +1,174 @@
+/* src/components/Contact/Contact.module.css */
+/* -----------------------------------------
+   CONTACT SECTION (React + CSS Modules)
+   ----------------------------------------- */
+
+/* Erişilebilirlik: JSX'te "sr-only" global kullanıldı */
+:global(.sr-only){
+  position:absolute!important;
+  width:1px;height:1px;
+  padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* (Varsa) genel section stilini override etmek için bırakıldı */
+.Section {}
+
+/* Arka plan ve iç boşluk */
+.Contact{
+  padding:160px 0;
+  background-image:url("/images/contact-bg.png");
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:cover;
+}
+
+/* Basit grid/kolon yerleşimi */
+.Container{ max-width:1140px; margin:0 auto; padding:0 20px; }
+.Row{ display:flex; flex-wrap:wrap; align-items:center; gap:40px; }
+
+/* Sol/Sağ kolonlar */
+.ColLeft{ flex:1 1 480px; min-width:280px; }
+.ColRight{ flex:1 1 480px; min-width:0; } /* min-width:0 kritik: taşmayı önler */
+
+/* Başlık & açıklama (beyaz) */
+.SectionHeading h2,
+.SectionHeading h2 em,
+.SectionHeading h2 span{
+  color:#fff;
+}
+.SectionHeading p{
+  color:#fff;
+  margin-top:30px;
+}
+
+/* Telefon bilgisi */
+.PhoneInfo{ margin-top:40px; }
+.PhoneInfo h4{
+  font-size:20px;
+  font-weight:700;
+  color:#fff;
+}
+
+/* 📞 ikonlu telefon satırı */
+.Phone{
+  display:inline-flex; align-items:center; gap:15px;
+  margin-left:30px;
+}
+.Phone > span:first-child{
+  width:46px; height:46px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:#fff; border-radius:50%;
+  color:#ff3b2c; font-size:22px;
+  margin-right:15px;
+}
+.Phone a{
+  color:#fff; font-size:15px; font-weight:400; text-decoration:none;
+}
+
+/* -----------------------------------------
+   FORM KARTI
+   ----------------------------------------- */
+.ColRight form{
+  margin-left:30px;
+  position:relative;
+  background-color:#fff;
+  padding:60px 30px;
+  border-radius:20px;
+  max-width:100%; /* Güvenlik: kutu kartı taşmasın */
+}
+
+/* Dekor görseli */
+.ContactDec{
+  position:absolute;
+  right:-166px;
+  bottom:0;
+}
+.ContactDec img{ max-width:178px; }
+
+/* Form iç yerleşim — GRID */
+.FormGrid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:20px;
+}
+.ColHalf{ grid-column:span 1; min-width:0; }
+.ColFull{ grid-column:1 / -1; }
+
+/* Alan grubu reset */
+.Fieldset{ margin:0; padding:0; border:none; }
+
+/* Girdi/textarea ortak stiller */
+.ColRight form input,
+.ColRight form textarea,
+.Textarea{
+  max-width:100%;
+  width:100%;
+  box-sizing:border-box;
+  font-size:15px; font-weight:300; color:#2a2a2a;
+  background-color:#d1f3ff;
+  border:none; outline:none;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+
+/* Input özel */
+.ColRight form input{
+  height:46px;
+  border-radius:33px;
+  padding:0 20px;
+}
+.ColRight form input::placeholder{ color:#2a2a2a; }
+
+/* Textarea özel */
+.ColRight form textarea,
+.Textarea{
+  min-width:100%; max-width:100%;
+  min-height:140px; max-height:180px; height:140px;
+  padding:15px 20px;
+}
+.ColRight form textarea::placeholder{ color:#2a2a2a; }
+
+/* Buton */
+.MainButton,
+.ColRight form button{
+  display:inline-block;
+  background-color:#03a4ed;
+  font-size:15px; font-weight:400; color:#fff;
+  text-transform:capitalize;
+  padding:12px 25px;
+  border-radius:23px;
+  letter-spacing:0.25px;
+  border:none; outline:none;
+  transition:all .3s;
+  cursor:pointer;
+}
+.MainButton:hover,
+.ColRight form button:hover{
+  background-color:#fe3f40;
+}
+
+/* Durum mesajları */
+.ErrorMsg{ color:#fe3f40; margin-top:10px; font-size:14px; }
+.SuccessMsg{ color:#1a8f3a; margin-top:10px; font-size:14px; }
+
+/* -----------------------------------------
+   RESPONSIVE DÜZENLEMELER
+   ----------------------------------------- */
+
+/* Orta ekranlarda dekoru biraz içeri al; yatay scroll'u önler */
+@media (max-width: 1200px){
+  .ContactDec{ right:-60px; }
+}
+
+/* Tablet ve aşağısı: tek sütun form + kompakt padding + dekor kapalı */
+@media (max-width: 900px){
+  .FormGrid{ grid-template-columns:1fr; }
+  .ColRight form{ margin-left:0; padding:40px 20px; }
+  .ContactDec{ display:none; }
+}
+
+/* Küçük ekranlarda sol kolon min genişliği azalt */
+@media (max-width: 600px){
+  .ColLeft{ min-width:0; }
+}

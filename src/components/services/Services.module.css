@@ -1,0 +1,151 @@
+/* src/sections/Services/Services.module.css */
+
+/* Bölüm iskeleti */
+.ourServices {
+  margin-top: 0;
+  padding-top: 120px;
+}
+
+/* Layout yardımcıları */
+.container {
+  width: min(1140px, 92%);
+  margin: 0 auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* sol görsel / sağ içerik */
+  align-items: center;
+  gap: 40px;
+}
+
+/* .colLeft {}
+.colRight {} */
+
+/* Sol görsel */
+.leftImage {
+  margin-right: 45px;
+}
+.leftImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Başlık/metin */
+.sectionHeading h2 {
+  margin-right: 100px;
+}
+.sectionHeading p {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+/* === İstatistik Kartları === */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  padding: 18px 16px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(10, 24, 53, 0.06);
+  border: 1px solid rgba(10, 24, 53, 0.06);
+  text-align: center;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ff4d1e; /* turuncu vurgu (template gradyanı ile uyumlu) */
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin-bottom: 2px;
+}
+
+.statCaption {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* === Checklist === */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* iki sütunlu liste */
+  gap: 10px 24px;
+}
+
+.checklistItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkIcon {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1;
+  background: linear-gradient(105deg, rgba(255,77,30,1) 0%, rgba(255,44,109,1) 100%);
+  color: #fff;
+  margin-top: 2px;
+}
+
+/* CTA (opsiyonel) */
+.ctaRow {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+}
+.ctaPrimary, .ctaGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.ctaPrimary {
+  background: linear-gradient(105deg, rgba(255,77,30,1) 0%, rgba(255,44,109,1) 100%);
+  color: #fff;
+}
+.ctaGhost {
+  border: 2px solid rgba(255,77,30,0.25);
+  color: #ff4d1e;
+  background: #fff;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1200px) {
+  .statsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 992px) {
+  .row { grid-template-columns: 1fr; }
+  .leftImage { margin-right: 0; margin-bottom: 30px; text-align: center; }
+  .sectionHeading h2 { margin-right: 0; }
+  .checklist { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .statValue { font-size: 24px; }
+}
