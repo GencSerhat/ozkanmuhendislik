@@ -18,8 +18,6 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Buraya mail gönderme/endpoint entegrasyonu eklenecek
-    // Şimdilik sadece basit bir durum simülasyonu:
     if (!form.name || !form.surname || !form.email || !form.message) {
       setStatus({ ok: false, error: "Lütfen tüm alanları doldurun." });
       return;
@@ -34,17 +32,19 @@ export default function Contact() {
           {/* Sol kolon: başlık ve telefon */}
           <div className={styles.ColLeft}>
             <div className={styles.SectionHeading}>
-              <h2>Feel Free To Send Us a Message About Your Website Needs</h2>
+              <h2>Isı Pompası, Doğalgaz Dönüşümü, Güneş Enerjisi ve Mekanik Tesisat İçin Keşif &amp; Teklif Alın</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                doer ket eismod tempor incididunt ut labore et dolores
+                Muğla Milas–Bodrum ve çevresinde; ısı pompası sistemleri, doğalgaz dönüşümü, yerden ısıtma, 
+                merkezi ısıtma/soğutma (VRF/VRV), güneş enerjisi (PV/termal) ve mekanik tesisat projelendirme–uygulama
+                hizmetleri veriyoruz. Mühendislik bakışıyla enerji verimliliğini artırıp işletme maliyetlerini düşüren
+                çözümler sunuyoruz. Formu doldurun; uygun tarih için keşif randevunuzu oluşturalım ve net fiyat teklifinizi paylaşalım.
               </p>
               <div className={styles.PhoneInfo}>
                 <h4>
-                  For any enquiry, Call Us:{" "}
+                  Teknik destek ve randevu için arayın:{" "}
                   <span className={styles.Phone}>
                     <span aria-hidden="true">📞</span>{" "}
-                    <a href="tel:0100200340">010-020-0340</a>
+                    <a href="tel:+905444200309">+90 544 420 03 09</a>
                   </span>
                 </h4>
               </div>
@@ -58,13 +58,13 @@ export default function Contact() {
                 <div className={styles.ColHalf}>
                   <fieldset className={styles.Fieldset}>
                     <label htmlFor="name" className="sr-only">
-                      Name
+                      Ad
                     </label>
                     <input
                       type="text"
                       name="name"
                       id="name"
-                      placeholder="Name"
+                      placeholder="Adınız"
                       autoComplete="on"
                       required
                       value={form.name}
@@ -76,13 +76,13 @@ export default function Contact() {
                 <div className={styles.ColHalf}>
                   <fieldset className={styles.Fieldset}>
                     <label htmlFor="surname" className="sr-only">
-                      Surname
+                      Soyad
                     </label>
                     <input
                       type="text"
                       name="surname"
                       id="surname"
-                      placeholder="Surname"
+                      placeholder="Soyadınız"
                       autoComplete="on"
                       required
                       value={form.surname}
@@ -94,13 +94,13 @@ export default function Contact() {
                 <div className={styles.ColFull}>
                   <fieldset className={styles.Fieldset}>
                     <label htmlFor="email" className="sr-only">
-                      Your Email
+                      E-posta
                     </label>
                     <input
                       type="email"
                       name="email"
                       id="email"
-                      placeholder="Your Email"
+                      placeholder="E-posta adresiniz"
                       required
                       value={form.email}
                       onChange={handleChange}
@@ -111,13 +111,13 @@ export default function Contact() {
                 <div className={styles.ColFull}>
                   <fieldset className={styles.Fieldset}>
                     <label htmlFor="message" className="sr-only">
-                      Message
+                      Mesaj
                     </label>
                     <textarea
                       name="message"
                       id="message"
                       className={styles.Textarea}
-                      placeholder="Message"
+                      placeholder="Kısaca ihtiyacınızı yazın (ör. ısı pompası kapasite hesabı, doğalgaz dönüşümü, yerden ısıtma, VRF/VRV, güneş enerjisi, tesisat projelendirme)"
                       required
                       value={form.message}
                       onChange={handleChange}
@@ -132,7 +132,7 @@ export default function Contact() {
                       id="form-submit"
                       className={styles.MainButton}
                     >
-                      Send Message
+                      Mesajı Gönder
                     </button>
                   </fieldset>
                 </div>
@@ -153,7 +153,7 @@ export default function Contact() {
               )}
               {status.ok && (
                 <p className={styles.SuccessMsg}>
-                  Mesajınız alındı. Teşekkürler!
+                  Mesajınız alındı. En kısa sürede sizinle iletişime geçeceğiz.
                 </p>
               )}
             </form>

@@ -1,0 +1,26 @@
+/* src/components/Footer/Footer.module.css */
+
+/* Dış sarmalayıcı (istersen arka plan rengi ekleyebilirsin) */
+/* .Footer {} */
+
+/* Merkez konteyner — projede zaten bir Container varsa buna göre uyarlayabilirsin */
+.Container{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Metin ve linkler */
+.Text{
+  text-align: center;
+  margin: 30px 0 45px 0;
+}
+
+.Link{
+  color: #fe3f40;
+  text-decoration: none;
+}
+
+.Link:hover{
+  text-decoration: underline;
+}
