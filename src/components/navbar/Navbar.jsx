@@ -7,14 +7,15 @@ function Navbar() {
   useEffect(() => {
     const onScroll = () => setSticky(window.scrollY > 8);
     onScroll();
-    window.addEventListener("scroll", onScroll, {passive:true});
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const menu = [
     { href: "#top", label: "Home" },
-    { href: "#about", label: "About Us" },
     { href: "#services", label: "Services" },
+    { href: "#about", label: "About Us" },
+
     { href: "#portfolio", label: "Portfolio" },
     { href: "#blog", label: "Blog" },
     { href: "#contact", label: "Message Us" },
